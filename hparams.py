@@ -5,7 +5,7 @@ import tensorflow as tf
 hparams = tf.contrib.training.HParams(
 	# Comma-separated list of cleaners to run on text prior to training and eval. For non-English
 	# text, you may want to use "basic_cleaners" or "transliteration_cleaners".
-	cleaners='english_cleaners',
+	cleaners='basic_cleaners',
 
 
 	#If you only have 1 GPU or want to use only one GPU, please set num_gpus=0 and specify the GPU idx on run. example:
@@ -118,7 +118,7 @@ hparams = tf.contrib.training.HParams(
 
 	#Tacotron
 	#Model general type
-	outputs_per_step = 1, #number of frames to generate at each decoding step (increase to speed up computation and allows for higher batch size, decreases G&L audio quality)
+	outputs_per_step = 2, #number of frames to generate at each decoding step (increase to speed up computation and allows for higher batch size, decreases G&L audio quality)
 	stop_at_any = True, #Determines whether the decoder should stop when predicting <stop> to any frame or to all of them (True works pretty well)
 	batch_norm_position = 'after', #Can be in ('before', 'after'). Determines whether we use batch norm before or after the activation function (relu). Matter for debate.
 	clip_outputs = True, #Whether to clip spectrograms to T2_output_range (even in loss computation). ie: Don't penalize model for exceeding output range and bring back to borders.
