@@ -334,7 +334,7 @@ hparams = tf.contrib.training.HParams(
 	wavenet_natural_eval = False, #Whether to use 100% natural eval (to evaluate autoregressivity performance) or with teacher forcing to evaluate overfit and model consistency.
 
 	#Tacotron-2 integration parameters
-	train_with_GTA = True, #Whether to use GTA mels to train WaveNet instead of ground truth mels.
+	train_with_GTA = False, #Whether to use GTA mels to train WaveNet instead of ground truth mels.
 	###########################################################################################################################################
 
 	#Eval/Debug parameters
